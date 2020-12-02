@@ -45,7 +45,6 @@ public class Repo extends Observable {
         for (int i = 0; i < columnData.length; i++, inTable = false) {
             for (int j = 0; j < data.length; j++) {
                 if (data[j][5].equals(columnData[i][0])) {
-                    System.out.println("IN here Data: " + data[j][5] + " INPUT: " + columnData[i][0]);
                     add[j] = columnData[i][1];
                     inTable = true;
                     k++;
@@ -56,7 +55,6 @@ public class Repo extends Observable {
                 notInRoster.add(columnData[i]);
             }
         }
-        System.out.println(k);
         nColumns.add(add);
         String[] temp = {(String.valueOf(k))};
         notInRoster.add(temp);

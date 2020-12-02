@@ -2,25 +2,27 @@ import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
 
 import javax.swing.*;
-import java.util.Date;
 import java.util.Locale;
 
-public class DatePicker {
-    JCalendar jCalendar;
-    JDateChooser jDateChooser;
-    JPanel jpanel;
-    JFrame jFrame;
-
-    DatePicker() {
+public class DatePicker extends JFrame {
+    private JDateChooser jDateChooser;
+    DatePicker(Action action) {
+        //
         jDateChooser = new JDateChooser();
+        jDateChooser.setSize(200, 200);
         jDateChooser.setLocale(Locale.US);
-        jpanel = new JPanel();
-        jFrame = new JFrame();
-        jpanel.add(new JLabel("Date Chooser"));
-        jpanel.add(jDateChooser);
-        jFrame.add(jpanel);
-        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jFrame.setSize(200,100);
+        JButton jButton = new JButton("Confirm Date");
+        jButton.addActionListener(action);
+        JMenuBar jMenuBar = new JMenuBar();
+        jMenuBar.add(jButton);
+        this.setJMenuBar(jMenuBar);
+        this.add(jDateChooser);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setSize(300, 200);
+        this.setLocation(500, 300);
+        this.setVisible(true);
     }
-
+    public JDateChooser getjDateChooser() {
+        return jDateChooser;
+    }
 }
