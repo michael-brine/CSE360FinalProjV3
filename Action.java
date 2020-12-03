@@ -9,16 +9,26 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
+
 public class Action implements ActionListener {
     private static DatePicker datePicker;
     private World world;
     private Repo repo;
 
+   /**
+ * @description: COnstructor
+ *@param: World, Repo
+ * @ return none
+ */
     Action(World world, Repo repo) {
         this.world = world;
         this.repo = repo;
     }
-
+ /**
+ * @description: this method call specific button functionality
+ *@param: ActionEvent e
+ * @ return: void
+ */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == "About") {
@@ -127,6 +137,11 @@ public class Action implements ActionListener {
             //world.add()
         }
     }
+     /**
+ * @description: method checks if the the student that was added to the table wasn't added from the roster 
+  *@param: ArrayList<String> dialog
+ * @ return dialofLine
+ */
     String dialogLine(ArrayList<String[]> dialog) {
         String dialogLine, plural;
         if (dialog.size() - 1 == 1) {
