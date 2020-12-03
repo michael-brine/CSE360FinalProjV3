@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class Main extends JFrame {
+public class Main  {
     Main() {
         Repo repo = new Repo();
         World world = new World(repo);

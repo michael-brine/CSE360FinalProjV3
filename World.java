@@ -39,6 +39,7 @@ public class World extends JFrame implements Observer {
         this.setSize(500, 400);
         this.setLocation(400, 200);
         this.setVisible(true);
+        this.setTitle("CSE 360 Final Project");
     }
 
     /**
@@ -53,13 +54,11 @@ public class World extends JFrame implements Observer {
             String[][] data = repo.getData();
             String[] header = repo.getHeader();
             table = new Table(data, header);
-            table.getJTable().setBounds(30, 40, 500, 400);
-            JPanel jPanel = new JPanel();
-            jPanel.add(table.getJTable());
-            JScrollPane jScrollPane = new JScrollPane(jPanel);
-            //jScrollPane.setHorizontalScrollBar(new JScrollBar());
-            //jScrollPane.setAutoscrolls(true);
-            this.add(new JScrollPane((jPanel)));
+            table.getJTable().setBounds(30, 40, 200, 300);
+            table.getJTable().setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+            JScrollPane jScrollPane = new JScrollPane(table.getJTable(), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+                    JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+            this.add(jScrollPane);
         }
         //if roster has been updated for the first time must add attendance
         if (repo.getN() > 1) {

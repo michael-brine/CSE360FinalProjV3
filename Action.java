@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -52,7 +53,7 @@ public class Action implements ActionListener {
             //removes date picker
             datePicker.setVisible(false);
             //Gets date
-            Date date = datePicker.getjDateChooser().getDate();
+            Date date = datePicker.getJDateChooser().getDate();
             //Parses Date into String
             String dateString = date.toLocaleString().substring(0, date.toLocaleString().indexOf(','));
             //Open File Path Selecter
@@ -122,7 +123,8 @@ public class Action implements ActionListener {
             }
         }
         if (e.getActionCommand() == "Plot Data") {
-
+            PlotData plot = new PlotData(repo);
+            //world.add()
         }
     }
     String dialogLine(ArrayList<String[]> dialog) {

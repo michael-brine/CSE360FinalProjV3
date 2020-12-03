@@ -7,7 +7,6 @@ import java.util.Locale;
 public class DatePicker extends JFrame {
     private JDateChooser jDateChooser;
     DatePicker(Action action) {
-        //
         jDateChooser = new JDateChooser();
         jDateChooser.setSize(200, 200);
         jDateChooser.setLocale(Locale.US);
@@ -18,11 +17,11 @@ public class DatePicker extends JFrame {
         this.setJMenuBar(jMenuBar);
         this.add(jDateChooser);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(300, 200);
+        this.setSize(300, 100);
         this.setLocation(500, 300);
         this.setVisible(true);
     }
-    public JDateChooser getjDateChooser() {
+    public JDateChooser getJDateChooser() {
         return jDateChooser;
     }
 }
