@@ -8,6 +8,9 @@ public class Repo extends Observable {
     private String[] header;
     private int n;
 
+    /**
+     * Constructs known data structs, like header, and initializes arraylists
+     */
     Repo() {
         dates = new ArrayList<>();
         header = new String[]{"ID", "First Name", "Last Name",
@@ -16,26 +19,59 @@ public class Repo extends Observable {
         n = 0;
     }
 
+    /**
+     * Returns n, numbers of columns added, so can accessed
+     *
+     * @return int
+     */
     public int getN() {
         return n;
     }
 
+    /**
+     * Returns the header, String[]
+     *
+     * @return String[]
+     */
     public String[] getHeader() {
         return header;
     }
 
+    /**
+     * Returns private data
+     *
+     * @return data
+     */
     public String[][] getData() {
         return data;
     }
 
+    /**
+     * returns private nColumns
+     *
+     * @return nColumns
+     */
     public ArrayList<String[]> getNColumns() {
         return nColumns;
     }
 
+    /**
+     * Returns private dates
+     *
+     * @return dates
+     */
     public ArrayList<String> getDates() {
         return dates;
     }
 
+    /**
+     * Returns Arraylist of all ASURITES and time, that were inputted but not on roster,
+     * and the count of students added to the table, Takes String[][] column data as "ASURITE","Time"
+     *
+     * @param columnData
+     * @param date
+     * @return
+     */
     public ArrayList<String[]> addColumn(String[][] columnData, String date) {
         dates.add(date);
         ArrayList<String[]> notInRoster = new ArrayList<>();
@@ -64,6 +100,11 @@ public class Repo extends Observable {
         return notInRoster;
     }
 
+    /**
+     * sets data only does this once
+     *
+     * @param data
+     */
     public void setData(String[][] data) {
         if (n == 0) {
             this.data = data;
