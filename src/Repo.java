@@ -76,6 +76,10 @@ public class Repo extends Observable {
         dates.add(date);
         ArrayList<String[]> notInRoster = new ArrayList<>();
         String[] add = new String[data.length];
+        for (int i = 0; i < add.length; i++)
+        {
+          add[i] = "0";
+        }
         int k = 0;
         boolean inTable = false;
         for (int i = 0; i < columnData.length; i++, inTable = false) {
