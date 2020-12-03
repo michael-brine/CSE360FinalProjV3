@@ -31,7 +31,7 @@ public class Action implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == "About") {
             JOptionPane.showMessageDialog(world, "CSE 360 Final Project done by:"
-                    + "\nWilliam Bowden\nKyle Otstot\nShawn Karunanayake\nMichael Brine\nReema Alamanki");
+                    + "\nWilliam Bowden\nKyle Otstot\nShawn Karunanayake\nMichael Brine\nReema Almalki");
         }
         //If Load a Roster is selected
         if (e.getActionCommand() == "Load a Roster") {
