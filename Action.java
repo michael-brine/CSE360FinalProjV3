@@ -13,12 +13,21 @@ public class Action implements ActionListener {
     private static DatePicker datePicker;
     private World world;
     private Repo repo;
-
+/**
+	 * Constructor for class Action
+	 * 
+	 * @Description: this constructor initialize the world and repo objects
+	 *
+	 */
     Action(World world, Repo repo) {
         this.world = world;
         this.repo = repo;
     }
-
+/**
+	 * @description: this method calls specific action depending on the button
+	 * @param: ActionEvent e
+	 * @return: [void] 	 * 
+	 */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand() == "About") {
@@ -127,6 +136,12 @@ public class Action implements ActionListener {
             //world.add()
         }
     }
+    /**
+	 * @description: this method checks the student in the table if it was addedfrom the roster
+	 * @param: ArrayList<String> dialog
+	 * @return: [String] returns if the student was added to the table
+	 * 
+	 */
     String dialogLine(ArrayList<String[]> dialog) {
         String dialogLine, plural;
         if (dialog.size() - 1 == 1) {
