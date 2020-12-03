@@ -59,7 +59,7 @@ public class PlotData extends JFrame {
     int countPercents(int[] percents, int key) {
         int count = 0;
         for (int i = 0; i < percents.length; i++) {
-            if (percents[i] == key) {
+            if (percents[i] >= key) {
                 count++;
             }
         }
